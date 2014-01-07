@@ -41,7 +41,7 @@ class SequenceFileGrouper extends Configured with Tool {
       setOutputValueClass(classOf[VectorWritable])
       setInputFormatClass(classOf[SequenceFileInputFormat[Text, VectorWritable]])
       setOutputFormatClass(classOf[SequenceFileOutputFormat[Text, VectorWritable]])
-      //      setNumReduceTasks(10) Set this to an appropriate value depending on your data size
+      setNumReduceTasks(10) // Set this to an appropriate value depending on the data size
     }
 
     FileInputFormat.addInputPath(job, new Path(args(0)))
